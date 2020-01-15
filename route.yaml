@@ -1,0 +1,12 @@
+kind: Route
+apiVersion: v1
+metadata:
+  name: myapp-route
+  namespace: asv
+  labels:
+    app: myapp
+spec:
+  path: "/test"
+  to:
+    kind: Service
+    name: myapp-service

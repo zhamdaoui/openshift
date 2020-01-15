@@ -1,0 +1,21 @@
+kind: "DeploymentConfig"
+apiVersion: "v1"
+metadata:
+  name: "frontend"
+spec:
+  template: 
+    metadata:
+      labels:
+        name: "frontend"
+    spec:
+      containers:
+        - name: "helloworld"
+          image: openshift/hello-openshift
+          ports:
+            - containerPort: 8080
+              protocol: "TCP"
+  replicas: 2 
+  strategy: 
+    type: "Rolling"
+  paused: false 
+  revisionHistoryLimit: 2 
