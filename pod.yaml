@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
   - name: myapp-container
-    image: openshift/hello-openshift
+    image: zhamdaoui/myapp-web-app:v1
     ports:
         - containerPort: 8080
           protocol: TCP

@@ -1,20 +1,20 @@
 kind: "DeploymentConfig"
 apiVersion: "v1"
 metadata:
-  name: "frontend"
+  name:  myapp-dc
 spec:
   template: 
     metadata:
       labels:
-        name: "frontend"
+        app: myapp
     spec:
       containers:
-        - name: "helloworld"
-          image: openshift/hello-openshift
+        - name: myapp-container
+          image: zhamdaoui/myapp-web-app:v2
           ports:
             - containerPort: 8080
               protocol: "TCP"
-  replicas: 2 
+  replicas: 3 
   strategy: 
     type: "Rolling"
   paused: false 
